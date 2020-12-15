@@ -1,0 +1,48 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        Welcome to Dashboard!
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        Your Registered EmailID : {{userEmail}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content> -->
+
+<!-- <ion-footer (click)="logout()">
+  
+  <ion-toolbar color="danger">
+    <ion-title class="ion-text-center">Log Out</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="friend-list">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Friend List</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="map">
+      <ion-icon name="map"></ion-icon>
+      <ion-label>Map</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="profile">
+      <ion-icon name="information-circle"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

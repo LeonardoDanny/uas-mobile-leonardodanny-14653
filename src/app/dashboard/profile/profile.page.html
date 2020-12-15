@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col size="3" class="ion-text-center">
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <ion-avatar class="avatar ion-padding-bottom">
+          <ion-img (click)="getPicture('camera')"  *ngIf="!photo" src='https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y'></ion-img>
+          <img (click)="getPicture('camera')"  *ngIf="photo" [src]='photo'>
+        </ion-avatar>
+        <h3>Leonardo Danny</h3>
+        <h3 >00000014653</h3>
+      </ion-col>
+      <ion-col size="3" class="ion-text-center">
+      </ion-col>
+    </ion-row>
+    <input type="file" *ngIf="isDesktop" #filePicker (change)="onFileChoose($event)">
+    
+    <ion-row>
+      <ion-col size="12" class="ion-text-center" style="padding-top:25%">
+        <ion-button (click)="logout()">Logout</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+
+      <label class="ion-text-center padding" >Hi. Leonardo Danny Here. 
+        <br>NIM 00000014653
+        <br>Mahasiswa 2016. Udah tua. Juga mo buru2 lulus. Mulai berkarat jiwa dan raga.
+        <br><br>Pengerjaan dibantu oleh :
+        <br> Weekly module
+        <br> Beberapa teman, 
+        <br> Felicia P. L., S.Kom.
+        <br> Angkatan atas
+        <br> Natanael M. W.
+        <br> Oey Anita
+
+      </label>
+      
+    </ion-row>
+    
+  </ion-grid>
+
+
+
+
+  <div >
+    <h3 class="padding_left">My Feeds</h3>
+    <ion-item  *ngFor="let location of history">
+
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>{{location.data.lat}} - {{location.data.lng}} - {{location.data.created_at}}</ion-label>
+        </ion-item>
+    
+        <ion-item-options side="end">
+          <ion-item-option (click)="delete($event, location.key)">Delete</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+
+    </ion-item>
+  </div>
+
+
+
+
+</ion-content>
